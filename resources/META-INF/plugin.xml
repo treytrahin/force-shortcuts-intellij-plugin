@@ -14,7 +14,7 @@
   <idea-version since-build="145"/>
   <application-components>
     <component>
-      <implementation-class>com.treytrahin.compelshortcuts.CompelShortcuts</implementation-class>
+      <implementation-class>com.treytrahin.plugin.intellij.compelshortcuts.CompelShortcuts</implementation-class>
     </component>
   </application-components>
 </idea-plugin>

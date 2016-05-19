@@ -1,8 +1,7 @@
-package com.treytrahin.compelshortcuts;
+package com.treytrahin.plugin.intellij.compelshortcuts;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.editor.impl.EditorComponentImpl;
-import com.treytrahin.compelshortcuts.dto.ShortcutDTO;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
@@ -26,10 +25,10 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
         }
 
         Component sourceComponent = (Component) source;
-        Optional<ShortcutDTO> shortcut = ShortcutDTOFactory.buildShortcutIfAvailable(sourceComponent);
+        Optional<ShortcutAction> shortcutAction = ShortcutActionFactory.buildShortcutIfAvailable(sourceComponent);
 
-        if (shortcut.isPresent()) {
-            PopUpNotifier.firePopUp(shortcut.get());
+        if (shortcutAction.isPresent()) {
+            PopUpNotifier.firePopUp(shortcutAction.get());
             renderClickFutile(event);
         }
     }

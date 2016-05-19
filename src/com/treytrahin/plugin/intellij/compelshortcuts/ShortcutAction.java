@@ -1,10 +1,10 @@
-package com.treytrahin.compelshortcuts.dto;
+package com.treytrahin.plugin.intellij.compelshortcuts;
 
-public class ShortcutDTO {
+public class ShortcutAction {
     private String shortcutText = "";
     private String description = "";
 
-    public ShortcutDTO(String shortcutText, String description) {
+    public ShortcutAction(String shortcutText, String description) {
         this.shortcutText = shortcutText;
         this.description = description;
     }

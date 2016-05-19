@@ -1,31 +1,30 @@
-package com.treytrahin.compelshortcuts;
+package com.treytrahin.plugin.intellij.compelshortcuts;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.actionSystem.impl.ActionMenuItem;
 import com.intellij.openapi.keymap.KeymapUtil;
 import com.intellij.openapi.util.text.StringUtil;
-import com.treytrahin.compelshortcuts.dto.ShortcutDTO;
 
 import java.awt.*;
 import java.util.Optional;
 
-public class ShortcutDTOFactory {
+public class ShortcutActionFactory {
 
-    public static Optional<ShortcutDTO> buildShortcutIfAvailable(Component eventSource) {
-        ShortcutDTO shortcutDTO = null;
+    public static Optional<ShortcutAction> buildShortcutIfAvailable(Component eventSource) {
+        ShortcutAction shortcut = null;
 
         if (isActionButton(eventSource)) {
-            shortcutDTO = buildShortcut((ActionButton) eventSource);
+            shortcut = buildShortcut((ActionButton) eventSource);
         } else if (isActionMenuItem(eventSource)) {
-            shortcutDTO = buildShortcut((ActionMenuItem) eventSource);
+            shortcut = buildShortcut((ActionMenuItem) eventSource);
         }
 
-        if (shortcutDTO != null && StringUtil.isEmptyOrSpaces(shortcutDTO.getShortcutText())) {
+        if (shortcut != null && StringUtil.isEmptyOrSpaces(shortcut.getShortcutText())) {
             return Optional.empty();
         }
 
-        return Optional.ofNullable(shortcutDTO);
+        return Optional.ofNullable(shortcut);
     }
 
     private static boolean isActionButton(Component component) {
@@ -36,7 +35,7 @@ public class ShortcutDTOFactory {
         return ActionMenuItem.class.isAssignableFrom(component.getClass());
     }
 
-    public static ShortcutDTO buildShortcut(ActionButton actionButton) {
+    public static ShortcutAction buildShortcut(ActionButton actionButton) {
         AnAction anAction = actionButton.getAction();
         if (anAction == null) {
             return null;
@@ -45,14 +44,14 @@ public class ShortcutDTOFactory {
         String shortcutText = KeymapUtil.getFirstKeyboardShortcutText(anAction);
         String description = anAction.getTemplatePresentation().getText();
 
-        return new ShortcutDTO(shortcutText, description);
+        return new ShortcutAction(shortcutText, description);
     }
 
-    public static ShortcutDTO buildShortcut(ActionMenuItem actionMenuItem) {
+    public static ShortcutAction buildShortcut(ActionMenuItem actionMenuItem) {
         String shortcutText = actionMenuItem.getFirstShortcutText();
         String description = actionMenuItem.getText();
 
-        return new ShortcutDTO(shortcutText, description);
+        return new ShortcutAction(shortcutText, description);
     }
 
 
