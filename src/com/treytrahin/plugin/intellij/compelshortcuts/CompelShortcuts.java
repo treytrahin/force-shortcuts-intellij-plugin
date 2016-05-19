@@ -62,5 +62,4 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
     public String getComponentName() {
         return "Compel Shortcuts";
     }
-
 }

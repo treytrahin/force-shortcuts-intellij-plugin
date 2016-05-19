@@ -1,20 +1,22 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <name>Compel Shortcuts</name>
-  <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut in a popup</description>
-  <version>0.1</version>
-  <vendor email="treytrahin@gmail.com">Trey Trahin</vendor>
-  <change-notes><![CDATA[<ul>
+    <name>Compel Shortcuts</name>
+    <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut
+        in a popup
+    </description>
+    <version>0.1</version>
+    <vendor email="treytrahin@gmail.com">Trey Trahin</vendor>
+    <change-notes><![CDATA[<ul>
         <li> 0.1 </li>
         <ul>
           <li> Basic functionality </li>
         </ul>
     </ul>]]>
-  </change-notes>
-  <idea-version since-build="145"/>
-  <application-components>
-    <component>
-      <implementation-class>com.treytrahin.plugin.intellij.compelshortcuts.CompelShortcuts</implementation-class>
-    </component>
-  </application-components>
+    </change-notes>
+    <idea-version since-build="145"/>
+    <application-components>
+        <component>
+            <implementation-class>com.treytrahin.plugin.intellij.compelshortcuts.CompelShortcuts</implementation-class>
+        </component>
+    </application-components>
 </idea-plugin>

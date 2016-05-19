@@ -27,14 +27,6 @@ public class ShortcutActionFactory {
         return Optional.ofNullable(shortcut);
     }
 
-    private static boolean isActionButton(Component component) {
-        return ActionButton.class.isAssignableFrom(component.getClass());
-    }
-
-    private static boolean isActionMenuItem(Component component) {
-        return ActionMenuItem.class.isAssignableFrom(component.getClass());
-    }
-
     public static ShortcutAction buildShortcut(ActionButton actionButton) {
         AnAction anAction = actionButton.getAction();
         if (anAction == null) {
@@ -54,5 +46,11 @@ public class ShortcutActionFactory {
         return new ShortcutAction(shortcutText, description);
     }
 
+    private static boolean isActionButton(Component component) {
+        return ActionButton.class.isAssignableFrom(component.getClass());
+    }
 
+    private static boolean isActionMenuItem(Component component) {
+        return ActionMenuItem.class.isAssignableFrom(component.getClass());
+    }
 }
