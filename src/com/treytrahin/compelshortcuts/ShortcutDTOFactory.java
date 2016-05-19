@@ -12,13 +12,13 @@ import java.util.Optional;
 
 public class ShortcutDTOFactory {
 
-    public static Optional<ShortcutDTO> buildShortCutIfAvailable(Component eventSource) {
+    public static Optional<ShortcutDTO> buildShortcutIfAvailable(Component eventSource) {
         ShortcutDTO shortcutDTO = null;
 
         if (isActionButton(eventSource)) {
-            shortcutDTO = buildForceCutFromActionButton((ActionButton) eventSource);
+            shortcutDTO = buildShortcut((ActionButton) eventSource);
         } else if (isActionMenuItem(eventSource)) {
-            shortcutDTO = buildForceCutFromActionMenuItem((ActionMenuItem) eventSource);
+            shortcutDTO = buildShortcut((ActionMenuItem) eventSource);
         }
 
         if (shortcutDTO != null && StringUtil.isEmptyOrSpaces(shortcutDTO.getShortcutText())) {
@@ -36,7 +36,7 @@ public class ShortcutDTOFactory {
         return ActionMenuItem.class.isAssignableFrom(component.getClass());
     }
 
-    public static ShortcutDTO buildForceCutFromActionButton(ActionButton actionButton) {
+    public static ShortcutDTO buildShortcut(ActionButton actionButton) {
         AnAction anAction = actionButton.getAction();
         if (anAction == null) {
             return null;
@@ -48,7 +48,7 @@ public class ShortcutDTOFactory {
         return new ShortcutDTO(shortcutText, description);
     }
 
-    public static ShortcutDTO buildForceCutFromActionMenuItem(ActionMenuItem actionMenuItem) {
+    public static ShortcutDTO buildShortcut(ActionMenuItem actionMenuItem) {
         String shortcutText = actionMenuItem.getFirstShortcutText();
         String description = actionMenuItem.getText();
 

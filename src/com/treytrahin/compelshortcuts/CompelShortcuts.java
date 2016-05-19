@@ -43,10 +43,10 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
         }
 
         Component sourceComponent = (Component) source;
-        Optional<ShortcutDTO> forceCut = ShortcutDTOFactory.buildShortCutIfAvailable(sourceComponent);
+        Optional<ShortcutDTO> shortcut = ShortcutDTOFactory.buildShortcutIfAvailable(sourceComponent);
 
-        if (forceCut.isPresent()) {
-            PopUpNotifier.firePopUp(forceCut.get());
+        if (shortcut.isPresent()) {
+            PopUpNotifier.firePopUp(shortcut.get());
             renderClickFutile(e);
         }
     }
