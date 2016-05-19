@@ -12,31 +12,14 @@ import java.util.Optional;
 
 public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
 
-    public void initComponent() {
-        Toolkit.getDefaultToolkit().addAWTEventListener(this, AWTEvent.MOUSE_EVENT_MASK);
-    }
-
-    public void disposeComponent() {
-        Toolkit.getDefaultToolkit().removeAWTEventListener(this);
-    }
-
-    @NotNull
-    public String getComponentName() {
-        return "Compel Shortcuts";
-    }
-
     public void eventDispatched(AWTEvent event) {
-        if (eventIsLeftMouseClick(event)) {
+        if (isLeftMouseClick(event)) {
             handleMouseEvent((MouseEvent) event);
         }
     }
 
-    private boolean eventIsLeftMouseClick(AWTEvent event) {
-        return event.getID() == MouseEvent.MOUSE_RELEASED && ((MouseEvent) event).getButton() == MouseEvent.BUTTON1;
-    }
-
-    private void handleMouseEvent(MouseEvent e) {
-        final Object source = e.getSource();
+    private void handleMouseEvent(MouseEvent event) {
+        final Object source = event.getSource();
 
         if (isNotComponent(source) || isEditorComponent(source)) {
             return;
@@ -47,7 +30,7 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
 
         if (shortcut.isPresent()) {
             PopUpNotifier.firePopUp(shortcut.get());
-            renderClickFutile(e);
+            renderClickFutile(event);
         }
     }
 
@@ -62,6 +45,23 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
     private void renderClickFutile(MouseEvent event) {
         //TODO: On context menu clicks the menu stays up awkwardly after this. Make it not do that.
         event.consume();
+    }
+
+    private boolean isLeftMouseClick(AWTEvent event) {
+        return event.getID() == MouseEvent.MOUSE_RELEASED && ((MouseEvent) event).getButton() == MouseEvent.BUTTON1;
+    }
+
+    public void initComponent() {
+        Toolkit.getDefaultToolkit().addAWTEventListener(this, AWTEvent.MOUSE_EVENT_MASK);
+    }
+
+    public void disposeComponent() {
+        Toolkit.getDefaultToolkit().removeAWTEventListener(this);
+    }
+
+    @NotNull
+    public String getComponentName() {
+        return "Compel Shortcuts";
     }
 
 }
