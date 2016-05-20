@@ -8,7 +8,7 @@ import com.intellij.notification.Notifications;
 public class PopUpNotifier {
 
     public static void firePopUp(ShortcutAction shortcut) {
-        Notification tip = new Notification("Force Shortcuts", AllIcons.Ide.Warning_notifications, "Forced Shortcut:", buildSubtitle(shortcut), shortcut.getShortcutText(), NotificationType.WARNING, null);
+        Notification tip = new Notification("Force Shortcuts", AllIcons.General.BalloonInformation, "Force Shortcuts", buildSubtitle(shortcut), shortcut.getShortcutText(), NotificationType.INFORMATION, null);
         Notifications.Bus.notify(tip);
     }
 
