@@ -1,4 +1,4 @@
-package com.treytrahin.plugin.intellij.compelshortcuts;
+package com.treytrahin.plugin.intellij.forceshortcuts;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;

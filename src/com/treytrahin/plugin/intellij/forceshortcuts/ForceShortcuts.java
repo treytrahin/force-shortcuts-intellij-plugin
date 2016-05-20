@@ -1,4 +1,4 @@
-package com.treytrahin.plugin.intellij.compelshortcuts;
+package com.treytrahin.plugin.intellij.forceshortcuts;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.editor.impl.EditorComponentImpl;
@@ -9,7 +9,7 @@ import java.awt.event.AWTEventListener;
 import java.awt.event.MouseEvent;
 import java.util.Optional;
 
-public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
+public class ForceShortcuts implements ApplicationComponent, AWTEventListener {
 
     public void eventDispatched(AWTEvent event) {
         if (isLeftMouseClick(event)) {
@@ -60,6 +60,6 @@ public class CompelShortcuts implements ApplicationComponent, AWTEventListener {
 
     @NotNull
     public String getComponentName() {
-        return "Compel Shortcuts";
+        return "Force Shortcuts";
     }
 }

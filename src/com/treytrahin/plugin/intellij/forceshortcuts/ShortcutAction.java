@@ -1,4 +1,4 @@
-package com.treytrahin.plugin.intellij.compelshortcuts;
+package com.treytrahin.plugin.intellij.forceshortcuts;
 
 public class ShortcutAction {
     private String shortcutText = "";
