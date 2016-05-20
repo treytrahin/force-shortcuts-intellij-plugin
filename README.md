@@ -1,4 +1,4 @@
-# Compel Shortcuts
+# Force Shortcuts
 
 Forces the user to use keyboard shortcuts by blocking mouse clicks on buttons that have keybindings, and displaying a popup of what the keybinding is.
 
