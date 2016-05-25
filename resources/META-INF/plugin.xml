@@ -7,14 +7,16 @@
     <version>0.2</version>
     <vendor email="treytrahin@gmail.com" url="https://github.com/treytrahin">Trey Trahin</vendor>
     <change-notes><![CDATA[<ul>
-        <li> 0.2 </li>
-        <ul>
-          <li> Updated project homepage </li>
-        </ul>
-        <li> 0.1 </li>
-        <ul>
-          <li> Basic functionality </li>
-        </ul>
+        <li> 0.2
+            <ul>
+                <li> Updated project homepage </li>
+            </ul>
+        </li>
+        <li> 0.1
+            <ul>
+                <li> Basic functionality </li>
+            </ul>
+        </li
     </ul>]]>
     </change-notes>
     <idea-version since-build="145"/>
