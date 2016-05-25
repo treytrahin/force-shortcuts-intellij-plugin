@@ -1,12 +1,16 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin url="https://github.com/treytrahin/force-shortcuts-intellij-plugin">
     <name>Force Shortcuts</name>
     <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut
         in a popup
     </description>
-    <version>0.1</version>
-    <vendor email="treytrahin@gmail.com">Trey Trahin</vendor>
+    <version>0.2</version>
+    <vendor email="treytrahin@gmail.com" url="https://github.com/treytrahin">Trey Trahin</vendor>
     <change-notes><![CDATA[<ul>
+        <li> 0.2 </li>
+        <ul>
+          <li> Updated project homepage </li>
+        </ul>
         <li> 0.1 </li>
         <ul>
           <li> Basic functionality </li>
