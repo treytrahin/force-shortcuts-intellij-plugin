@@ -4,7 +4,7 @@
     <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut
         in a popup. Can be toggled on/off from the "Tools" drop down in the menu bar
     </description>
-    <version>0.2</version>
+    <version>0.3</version>
     <vendor email="treytrahin@gmail.com" url="https://github.com/treytrahin">Trey Trahin</vendor>
     <change-notes><![CDATA[<ul>
         <li> 0.3
