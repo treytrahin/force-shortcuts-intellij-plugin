@@ -2,11 +2,16 @@
 <idea-plugin url="https://github.com/treytrahin/force-shortcuts-intellij-plugin">
     <name>Force Shortcuts</name>
     <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut
-        in a popup
+        in a popup. Can be toggled on/off from the "Tools" drop down in the menu bar
     </description>
     <version>0.2</version>
     <vendor email="treytrahin@gmail.com" url="https://github.com/treytrahin">Trey Trahin</vendor>
     <change-notes><![CDATA[<ul>
+        <li> 0.3
+            <ul>
+                <li> Added on/off toggle to the "Tools" menu </li>
+            </ul>
+        </li>
         <li> 0.2
             <ul>
                 <li> Updated project homepage </li>
@@ -25,4 +30,11 @@
             <implementation-class>com.treytrahin.plugin.intellij.forceshortcuts.ForceShortcuts</implementation-class>
         </component>
     </application-components>
+    <actions>
+        <group id="ForceShortcuts.Menu">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action class="com.treytrahin.plugin.intellij.forceshortcuts.config.ForceShortcutsToggleAction"
+                    id="ForcedShortcuts.Toggle" text="Force Shortcuts"/>
+        </group>
+    </actions>
 </idea-plugin>

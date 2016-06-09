@@ -2,6 +2,7 @@ package com.treytrahin.plugin.intellij.forceshortcuts;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.editor.impl.EditorComponentImpl;
+import com.treytrahin.plugin.intellij.forceshortcuts.config.ForceShortcutsConfig;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
@@ -10,6 +11,8 @@ import java.awt.event.MouseEvent;
 import java.util.Optional;
 
 public class ForceShortcuts implements ApplicationComponent, AWTEventListener {
+
+    private ForceShortcutsConfig config = ForceShortcutsConfig.getInstance();
 
     public void eventDispatched(AWTEvent event) {
         if (isLeftMouseClick(event)) {
@@ -42,8 +45,10 @@ public class ForceShortcuts implements ApplicationComponent, AWTEventListener {
     }
 
     private void renderClickFutile(MouseEvent event) {
-        //TODO: On context menu clicks the menu stays up awkwardly after this. Make it not do that.
-        event.consume();
+        if (config.getForceShortcuts()) {
+            //TODO: On context menu clicks the menu stays up awkwardly after this. Make it not do that.
+            event.consume();
+        }
     }
 
     private boolean isLeftMouseClick(AWTEvent event) {
