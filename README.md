@@ -4,6 +4,14 @@ Forces the user to use keyboard shortcuts by blocking mouse clicks on buttons th
 
 Inspired by the [Key Promoter](https://plugins.jetbrains.com/plugin/1003) plugin by Dmitry Kashin.
 
+# Build Instructions
+
+To work on this project:
+ - Import the source into IntelliJ
+ - Create a run configuration of type `plugin` (use IntelliJ's JRE)
+ - To build a loadable plugin, from the `Build` menu bar drop down select `Prepare Plugin Module 'force-shortcuts' For Deployment` 
+    * This will build a .jar file in the root directory of the project. You can choose `Install plugin from disk` under `Plugins` in the settings window
+
 ## Known Issues
 
 * Top menu bar actions are not blocked
