@@ -4,9 +4,14 @@
     <description>Forces the user to use keyboard shortcuts by blocking click action and displaying the keyboard shortcut
         in a popup. Can be toggled on/off from the "Tools" drop down in the menu bar
     </description>
-    <version>0.3</version>
+    <version>0.4</version>
     <vendor email="treytrahin@gmail.com" url="https://github.com/treytrahin">Trey Trahin</vendor>
     <change-notes><![CDATA[<ul>
+        <li> 0.4
+            <ul>
+                <li> Allow usage in all JetBrains IDEA products (WebStorm, PyCharm, etc.)</li>
+            </ul>
+        </li>
         <li> 0.3
             <ul>
                 <li> Added on/off toggle to the "Tools" menu </li>
@@ -25,6 +30,7 @@
     </ul>]]>
     </change-notes>
     <idea-version since-build="145"/>
+    <depends>com.intellij.modules.lang</depends>
     <application-components>
         <component>
             <implementation-class>com.treytrahin.plugin.intellij.forceshortcuts.ForceShortcuts</implementation-class>
